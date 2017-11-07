@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyt.shopping.mapper.test.UserTestMapper">
+	
+	<insert id="insertUser" parameterType="UserTest">
+		insert into user(name,birthday) values(#{name},#{birthday})
+	</insert>
+	
+	<select id="findUserList" resultType="UserTest">
+		select * from user
+	</select>
+	
+</mapper>
