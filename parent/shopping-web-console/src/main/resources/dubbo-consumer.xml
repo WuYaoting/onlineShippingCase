@@ -22,10 +22,23 @@
 	
 	<!-- dubbo服务名称 -->
 	<dubbo:application name="console"/>
+	
 	<!-- 注册中心 -->
-	<dubbo:registry protocol="zookeeper" address="192.168.238.128:2181" />
+	<!-- <dubbo:registry protocol="zookeeper" address="192.168.238.128:2181" /> -->
+	<!-- 不配置注册中心 -->
+	<dubbo:registry address="N/A"/>
+	
 	<!-- 引用注册中心服务 -->
-	<dubbo:reference id="userTestService" 
-		interface="com.wyt.shopping.service.test.UserTestService" timeout="600000" />
+	<!-- <dubbo:reference id="userTestService" 
+		interface="com.wyt.shopping.service.test.UserTestService" timeout="600000" /> -->
+	<!-- 引用本地dubbo服务 -->
+	<dubbo:reference id="userTestService" interface="com.wyt.shopping.service.test.UserTestService" 
+		url="dubbo://127.0.0.1:20880" />
+	<dubbo:reference id="brandService" interface="com.wyt.shopping.service.BrandService" 
+		url="dubbo://127.0.0.1:20880" />
+	
+	
+	<!-- 全程超时时间 -->
+	<dubbo:consumer timeout="6000000" />
 		
 </beans>

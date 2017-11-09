@@ -22,9 +22,14 @@
 	
 	<!-- dubbo服务名称 -->
 	<dubbo:application name="service-product"/>
-	<!-- 注册中心 -->
-	<dubbo:registry protocol="zookeeper" address="192.168.238.128:2181"></dubbo:registry>
+	<!-- 配置注册中心 -->
+	<!-- <dubbo:registry protocol="zookeeper" address="192.168.238.128:2181"/> -->
+	<!-- 不配置注册中心，采用直联的方式 -->
+	<dubbo:registry address="N/A"/>
+	<dubbo:protocol name="dubbo" port="20880"/>
+	
 	<!-- 暴露服务 -->
-	<dubbo:service ref="userTestService" interface="com.wyt.shopping.service.test.UserTestService"></dubbo:service>
+	<dubbo:service ref="userTestService" interface="com.wyt.shopping.service.test.UserTestService"/>
+	<dubbo:service ref="brandService" interface="com.wyt.shopping.service.BrandService"/>
 		
 </beans>

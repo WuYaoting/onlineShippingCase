@@ -11,6 +11,7 @@ import com.wyt.shopping.pojo.test.UserTest;
 import com.wyt.shopping.service.test.UserTestService;
 
 @Controller
+@RequestMapping("/test")
 public class UserTestController {
 
 	@Resource
@@ -24,5 +25,11 @@ public class UserTestController {
 		}
 		return "test";
 	}
+	
+	@RequestMapping("/test1.do")
+	public String test1(){
+		return "test1";
+	}
+	
 	
 }
