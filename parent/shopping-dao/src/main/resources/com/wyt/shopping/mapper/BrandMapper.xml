@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyt.shopping.mapper.BrandMapper">
+	
+	<!-- 查询条件sql片段 -->
+	<sql id="query_brand_where">
+		<where>
+			<if test="name != null">
+				and name like "%"#{name}"%"
+			</if>
+			<if test="isDisplay != null">
+				and is_display = #{isDisplay}
+			</if>
+		</where>
+	</sql>
+	
+	<!-- 品牌列表查询 不分页 -->
+	<resultMap type="Brand" id="brandMap">
+		<result column="img_url" property="imgUrl"/>
+		<result column="is_display" property="isDisplay"/>
+	</resultMap>
+	<select id="selectBrandListNoPage" parameterType="BrandQuery" resultMap="brandMap">
+		select id,name,description,img_url,sort,is_display from bbs_brand
+		<include refid="query_brand_where"/>
+	</select>
+	
+	<!-- 品牌列表查询 分页 -->
+	<select id="selectBrandListHavePage" parameterType="BrandQuery" resultMap="brandMap">
+		select id,name,description,img_url,sort,is_display from bbs_brand
+		<include refid="query_brand_where"/>
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</select>
+	
+	<!-- 查询总记录条数 -->
+	<select id="selectBrandCount" parameterType="BrandQuery" resultType="int">
+		select count(*) from bbs_brand
+		<include refid="query_brand_where"/>
+	</select>
+	
+	<!-- 通过ID查询 -->
+	<select id="selectBrandById" parameterType="long" resultMap="brandMap">
+		select id,name,description,img_url,sort,is_display from bbs_brand
+		where id = #{id}
+	</select>
+	
+</mapper>
