@@ -34,7 +34,7 @@
 	<div class="clear"></div>
 </div>
 <div class="body-box" style="float:right">
-	<form id="jvForm" action="edit.do" method="post">
+	<form id="jvForm" action="update.do" method="post">
 		<input type="hidden" name="id" value="${brand.id }"/>
 		<table cellspacing="1" cellpadding="2" width="100%" border="0" class="pn-ftable">
 			<tbody>
@@ -57,7 +57,7 @@
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h"></td>
 						<td width="80%" class="pn-fcontent">
-						<img width="100" height="100" id="allUrl"/>
+						<img width="100" height="100" id="allUrl" src="${brand.allUrl }"/>
 						<input type="hidden" name="imgUrl" id="imgUrl"/>
 						<input type="file" name="pic" onchange="uploadPic()"/>
 					</td>

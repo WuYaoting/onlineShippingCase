@@ -19,4 +19,12 @@ public interface BrandMapper {
 	// 根据id查询品牌信息
 	Brand selectBrandById(Long id);
 	
+	// 更新品牌信息
+	void updateBrand(Brand brand);
+	
+	// 添加品牌
+	void insertBrand(Brand brand);
+	
+	// 删除
+	void deleteBrands(Long[] ids);
 }

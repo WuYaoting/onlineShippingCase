@@ -30,6 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectBrandListHavePage" parameterType="BrandQuery" resultMap="brandMap">
 		select id,name,description,img_url,sort,is_display from bbs_brand
 		<include refid="query_brand_where"/>
+		order by id desc
 		<if test="startRow != null">
 			limit #{startRow},#{pageSize}
 		</if>
@@ -46,5 +47,45 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select id,name,description,img_url,sort,is_display from bbs_brand
 		where id = #{id}
 	</select>
+	
+	<!-- 更新品牌信息 -->
+	<update id="updateBrand" parameterType="brand">
+		update bbs_brand 
+		<set>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="description != null">
+				description = #{description},
+			</if>
+			<if test="imgUrl != null">
+				img_url = #{imgUrl},
+			</if>
+			<if test="sort != null">
+				sort = #{sort},
+			</if>
+			<if test="isDisplay != null">
+				is_display = #{isDisplay},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<!-- 添加品牌 -->
+	<insert id="insertBrand" parameterType="Brand">
+		insert into bbs_brand(name,description,img_url,sort,is_display)
+		values(#{name},#{description},#{imgUrl},#{sort},#{isDisplay})
+	</insert>
+	
+	<!-- 删除品牌 -->
+	<delete id="deleteBrands" parameterType="Long[]">
+		delete from bbs_brand
+		<where>
+			<foreach collection="array" item="id" open="id in (" separator="," close=")">
+				#{id}
+			</foreach>
+		</where>
+	</delete>
+	
 	
 </mapper>

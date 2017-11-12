@@ -20,20 +20,11 @@
 		http://code.alibabatech.com/schema/dubbo        
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 	
-	<!-- dubbo服务名称 -->
-	<dubbo:application name="service-product"/>
-	<!-- 配置注册中心 -->
-	<!-- <dubbo:registry protocol="zookeeper" address="192.168.238.128:2181"/> -->
-	<!-- 不配置注册中心，采用直联的方式 -->
-	<dubbo:registry address="N/A"/>
-	<dubbo:protocol name="dubbo" port="20880"/>
 	
-	<!-- 暴露服务 -->
-	<dubbo:service ref="userTestService" interface="com.wyt.shopping.service.test.UserTestService"/>
-	<dubbo:service ref="brandService" interface="com.wyt.shopping.service.BrandService"/>
-	<dubbo:service ref="uploadService" interface="com.wyt.shopping.service.UploadService"/>
-	<dubbo:service ref="productService" interface="com.wyt.shopping.service.ProductService"/>
-	<dubbo:service ref="colorService" interface="com.wyt.shopping.service.ColorService"/>
-	<dubbo:service ref="skuService" interface="com.wyt.shopping.service.SkuService"/>
+	<bean id="jedis" class="redis.clients.jedis.Jedis">
+		<constructor-arg name="host" value="192.168.200.128"></constructor-arg>
+		<constructor-arg name="port" value="6379"></constructor-arg>
+	</bean>
+		
 		
 </beans>

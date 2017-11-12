@@ -2,6 +2,8 @@ package com.wyt.shopping.pojo;
 
 import java.io.Serializable;
 
+import com.wyt.shopping.utils.MyConstants;
+
 /**
  * 
  * @ClassName: Brand
@@ -16,6 +18,15 @@ public class Brand implements Serializable{
 		private String imgUrl; 		// 图片URL
 		private Integer sort; 		// 排序  越大越靠前   
 		private Integer isDisplay; 	// 是否可用   0 不可用 1 可用
+		
+		
+		// 用与图片回显
+		public String getAllUrl() {
+			if(this.imgUrl != null) {
+				return MyConstants.IMG_URL + this.imgUrl;
+			}
+			return null;
+		}
 		
 		public Long getId() {
 			return id;
