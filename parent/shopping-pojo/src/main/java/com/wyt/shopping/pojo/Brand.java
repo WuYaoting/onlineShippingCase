@@ -19,7 +19,15 @@ public class Brand implements Serializable{
 		private Integer sort; 		// 排序  越大越靠前   
 		private Integer isDisplay; 	// 是否可用   0 不可用 1 可用
 		
-		
+		// 测试
+		private String ids;
+		public String getIds() {
+			return ids;
+		}
+		public void setIds(String ids) {
+			this.ids = ids;
+		}
+
 		// 用与图片回显
 		public String getAllUrl() {
 			if(this.imgUrl != null) {

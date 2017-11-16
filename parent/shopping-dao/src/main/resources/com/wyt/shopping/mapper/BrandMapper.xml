@@ -72,7 +72,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!-- 添加品牌 -->
-	<insert id="insertBrand" parameterType="Brand">
+	<insert id="insertBrand" parameterType="Brand" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
 		insert into bbs_brand(name,description,img_url,sort,is_display)
 		values(#{name},#{description},#{imgUrl},#{sort},#{isDisplay})
 	</insert>

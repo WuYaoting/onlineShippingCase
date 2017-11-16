@@ -27,6 +27,7 @@ public class ProductController {
 	@Resource
 	private ColorService colorService;
 	
+	// 商品列表展示
 	@RequestMapping("/list.do")
 	public String list(Model model, String name, Long brandId, boolean isShow, Integer pageNo) {
 		// 查询所有品牌信息 用于回显
@@ -43,6 +44,7 @@ public class ProductController {
 		return "product/list";
 	}
 	
+	// 跳转至商品添加页面
 	@RequestMapping("/add.do")
 	public String add(Model model) {
 		List<Brand> brands = brandService.selectBrandListNoPage(null, 1);
@@ -52,11 +54,22 @@ public class ProductController {
 		return "product/add";
 	}
 	
+	// 添加商品 初始化库存信息
 	@RequestMapping("/save.do")
 	public String save(Product product) {
 		productService.insertProduct(product);
 		return "redirect:list.do";
 	}
+	
+	// 商品上架
+	@RequestMapping("/isShow.do")
+	public String isShow(Long[] ids) throws Exception{
+		productService.isShow(ids);
+		return "redirect:list.do";
+	}
+	
+	
+	
 	
 	
 }

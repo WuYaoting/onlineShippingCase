@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.wyt.shopping.mapper.BrandMapper;
 import com.wyt.shopping.pojo.Brand;
@@ -12,11 +13,15 @@ import com.wyt.shopping.pojo.BrandQuery;
 import com.wyt.shopping.pojo.Pagination;
 import com.wyt.shopping.service.BrandService;
 
+import redis.clients.jedis.Jedis;
+
 @Service("brandService")
 public class BrandServiceImpl implements BrandService {
 
 	@Resource
 	private BrandMapper brandMapper;
+	@Resource
+	private Jedis jedis;
 
 	// 不分页查询
 	@Override
@@ -72,15 +77,19 @@ public class BrandServiceImpl implements BrandService {
 	@Override
 	public void updateBrand(Brand brand) {
 		brandMapper.updateBrand(brand);
+		jedis.hset("brand", String.valueOf(brand.getId()), brand.getName());
 	}
 
 	// 添加品牌信息
+	@Transactional
 	@Override
 	public void insertBrand(Brand brand) {
 		brandMapper.insertBrand(brand);
+		jedis.hset("brand", String.valueOf(brand.getId()), brand.getName());
 	}
 
 	// 删除
+	@Transactional
 	@Override
 	public void deleteBrands(Long[] ids) {
 		brandMapper.deleteBrands(ids);

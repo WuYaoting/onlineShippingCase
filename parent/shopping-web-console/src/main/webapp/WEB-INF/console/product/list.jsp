@@ -14,12 +14,12 @@ function isShow(){
 		alert("请至少选择一个");
 		return;
 	}
-	//你确定删除吗
+	//你确定上架吗
 	if(!confirm("你确定上架吗")){
 		return;
 	}
 	//提交 Form表单
-	$("#jvForm").attr("action","/brand/isShow.do");
+	$("#jvForm").attr("action","/product/isShow.do");
 	$("#jvForm").attr("method","post");
 	$("#jvForm").submit();
 	

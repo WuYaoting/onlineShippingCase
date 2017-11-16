@@ -78,8 +78,16 @@ public class Product implements Serializable {
      * 添加时间
      */
     private Date createTime;
+    
+    private String price;
+    public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
     
     // 提供get方法用于页面回显
     public String[] getUrls() {

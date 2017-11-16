@@ -4,8 +4,15 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
 
+import org.apache.solr.client.solrj.SolrServer;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.wyt.shopping.mapper.ProductMapper;
 import com.wyt.shopping.mapper.SkuMapper;
@@ -27,6 +34,11 @@ public class ProductServiceImpl implements ProductService {
 	private SkuMapper skuMapper;
 	@Resource
 	private Jedis jedis;
+	@Resource
+	private SolrServer solrServer;
+	@Resource
+	private JmsTemplate jmsTemplate;
+	
 
 	// 查询品牌列表 分页，封装Pagination数据暂时交给controller
 	@Override
@@ -67,6 +79,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	// 添加商品
+	@Transactional
 	@Override
 	public void insertProduct(Product product) {
 		// 添加页面未提交信息 默认下架
@@ -93,9 +106,57 @@ public class ProductServiceImpl implements ProductService {
 				skuMapper.insertSelective(sku);
 			}
 		}
-		
-		
-		
 	}
 
+	// 商品上架
+	@Transactional
+	@Override
+	public void isShow(Long[] ids) throws Exception {
+		// 添加商品信息至索引库
+		Product p = new Product();
+		p.setIsShow(true);
+		for (Long id : ids) {
+			p.setId(id);
+			productMapper.updateByPrimaryKeySelective(p);
+			
+			// 发布消息
+			jmsTemplate.send(new MessageCreator() {
+				
+				@Override
+				public Message createMessage(Session session) throws JMSException {
+					return session.createTextMessage(String.valueOf(id));
+				}
+			});
+			
+//			Product product = productMapper.selectByPrimaryKey(id);
+//			SolrInputDocument doc = new SolrInputDocument();
+//			doc.setField("id", id);
+//			doc.setField("name_ik", product.getName());
+//			doc.setField("url", product.getImgUrl());
+//			doc.setField("brandId", product.getBrandId());
+//			// 库存信息 商品最低价
+//			doc.setField("price", this.getLowestPrice(id));
+//			solrServer.add(doc);
+//			solrServer.commit();
+		}
+	}
+
+	// 根据商品id 获取本商品的最低价
+//	private Float getLowestPrice(Long id) {
+//		SkuQuery skuQuery = new SkuQuery();
+//		skuQuery.createCriteria().andProductIdEqualTo(id);
+//		skuQuery.setOrderByClause("price asc");
+//		skuQuery.setPageNo(1);
+//		skuQuery.setPageSize(1);
+//		List<Sku> skus = skuMapper.selectByExample(skuQuery);
+//		Sku sku = skus.get(0);
+//		Float price = sku.getPrice();
+//		return price;
+//	}
+
+	
+	
+	
+	
+	
 }

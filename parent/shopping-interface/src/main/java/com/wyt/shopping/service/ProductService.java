@@ -11,4 +11,7 @@ public interface ProductService {
 	// 添加商品信息
 	void insertProduct(Product product);
 
+	// 商品上架
+	void isShow(Long[] ids) throws Exception;
+	
 }

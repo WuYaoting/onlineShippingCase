@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.wyt.shopping.mapper.ColorMapper;
 import com.wyt.shopping.mapper.SkuMapper;
@@ -36,6 +37,7 @@ public class SkuServiceImpl implements SkuService {
 		return skus;
 	}
 
+	@Transactional
 	@Override
 	public void updateSkuById(Sku sku) {
 		skuMapper.updateByPrimaryKeySelective(sku);
