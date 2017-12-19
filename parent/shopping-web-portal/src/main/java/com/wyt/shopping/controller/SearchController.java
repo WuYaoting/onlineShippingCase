@@ -17,6 +17,7 @@ import com.wyt.shopping.pojo.Color;
 import com.wyt.shopping.pojo.Pagination;
 import com.wyt.shopping.pojo.Product;
 import com.wyt.shopping.pojo.Sku;
+import com.wyt.shopping.service.AdService;
 import com.wyt.shopping.service.CmsService;
 import com.wyt.shopping.service.SearchService;
 
@@ -28,10 +29,14 @@ public class SearchController {
 	private SearchService searchService;
 	@Resource
 	private CmsService cmsService;
+	@Resource
+	private AdService adService;
 	
 	// 前台系统首页
 	@RequestMapping("/")
-	public String index(){
+	public String index(Model model){
+		String ads = adService.selectAdsByPositionIdForPortal(89L);
+		model.addAttribute("ads", ads);
 		return "index";
 	}
 	

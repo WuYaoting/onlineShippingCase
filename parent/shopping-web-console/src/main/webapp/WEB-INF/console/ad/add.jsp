@@ -14,9 +14,9 @@ function uploadPic(){
 			dataType : "json",
 			success : function(data){
 				//回显
-				$("#allUrl").attr("src",data.path);
+				$("#allUrl").attr("src",data.allUrl);
 				//赋值给隐藏域
-				$("#imgUrl").val(data.path);
+				$("#imgUrl").val(data.allUrl);
 			}
 			
 	};
@@ -33,14 +33,14 @@ function uploadPic(){
 	<div class="clear"></div>
 </div>
 <div class="body-box" style="float:right">
-	<form id="jvForm" action="add.do" method="post">
+	<form id="jvForm" action="save.do" method="post">
 		<table cellspacing="1" cellpadding="2" width="100%" border="0" class="pn-ftable">
 			<tbody>
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						<span class="pn-frequired">*</span>
 						广告位置:</td><td width="80%" class="pn-fcontent">
-						<input type="hidden" value="" name="positionId"/>
+						<input type="hidden" value="${positionId }" name="positionId"/>
 						大广告
 					</td>
 				</tr>

@@ -44,6 +44,8 @@
 		url="dubbo://127.0.0.1:20880" />
 	<dubbo:reference id="skuService" interface="com.wyt.shopping.service.SkuService" 
 		url="dubbo://127.0.0.1:20880" />
+	<dubbo:reference id="adService" interface="com.wyt.shopping.service.AdService" 
+		url="dubbo://127.0.0.1:20882" />
 	
 	
 	<!-- 全程超时时间 -->

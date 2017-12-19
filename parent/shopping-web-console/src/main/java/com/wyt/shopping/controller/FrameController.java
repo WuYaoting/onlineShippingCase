@@ -17,4 +17,14 @@ public class FrameController {
 		return "frame/product_left";
 	}
 	
+	@RequestMapping("/ad_main.do")
+	public String adMain() {
+		return "frame/ad_main";
+	}
+
+	@RequestMapping("/ad_left.do")
+	public String adLeft() {
+		return "frame/ad_left";
+	}
+	
 }

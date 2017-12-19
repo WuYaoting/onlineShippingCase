@@ -31,5 +31,6 @@
 	
 	<!-- 暴露服务 -->
 	<dubbo:service ref="cmsService" interface="com.wyt.shopping.service.CmsService"/>
+	<dubbo:service ref="adService" interface="com.wyt.shopping.service.AdService"/>
 		
 </beans>

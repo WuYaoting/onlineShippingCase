@@ -35,5 +35,6 @@
 	<dubbo:service ref="productService" interface="com.wyt.shopping.service.ProductService"/>
 	<dubbo:service ref="colorService" interface="com.wyt.shopping.service.ColorService"/>
 	<dubbo:service ref="skuService" interface="com.wyt.shopping.service.SkuService"/>
+	
 		
 </beans>

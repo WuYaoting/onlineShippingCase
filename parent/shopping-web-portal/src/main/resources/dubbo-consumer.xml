@@ -36,6 +36,14 @@
 		url="dubbo://127.0.0.1:20881" />
 	<dubbo:reference id="cmsService" interface="com.wyt.shopping.service.CmsService" 
 		url="dubbo://127.0.0.1:20882" />
+	<dubbo:reference id="adService" interface="com.wyt.shopping.service.AdService" 
+		url="dubbo://127.0.0.1:20882" />
+	<dubbo:reference id="buyerService" interface="com.wyt.shopping.service.BuyerService" 
+		url="dubbo://127.0.0.1:20883" />
+	<dubbo:reference id="sessionProvider" interface="com.wyt.shopping.service.SessionProvider" 
+		url="dubbo://127.0.0.1:20883" />
+	<dubbo:reference id="orderService" interface="com.wyt.shopping.service.OrderService" 
+		url="dubbo://127.0.0.1:20883" />
 
 	
 	<!-- 全程超时时间 -->

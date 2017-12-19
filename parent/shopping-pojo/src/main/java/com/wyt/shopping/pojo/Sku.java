@@ -53,18 +53,25 @@ public class Sku implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
-    
-    // 添加color字段
-    private Color color;
+    // 添加product字段，用于页面会显
+    private Product product;
+    public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 
+	// 添加color字段
+    private Color color;
     public Color getColor() {
 		return color;
 	}
-
 	public void setColor(Color color) {
 		this.color = color;
 	}
 
+	
 	public Long getId() {
         return id;
     }

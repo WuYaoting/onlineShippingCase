@@ -9,4 +9,22 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- 前端控制器 -->
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:springmvc-login.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- 拦截路径 -->
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>*.aspx</url-pattern>
+	</servlet-mapping>
+
+  
 </web-app>

@@ -68,8 +68,28 @@
 			</span>
 		</div>
 		<div class="cb-gift-main">
-			<div class="cb-gift-filter"><div class="title">送给谁：</div><ul class="cb-gift-filter-list clearfix"><li><a href="javascript:;" title="爸爸"><i class="check"></i>爸爸</a></li><li><a href="javascript:;" title="妈妈"><i class="check"></i>妈妈</a></li><li><a href="javascript:;" title="丈夫"><i class="check"></i>丈夫</a></li><li><a href="javascript:;" title="妻子"><i class="check"></i>妻子</a></li><li><a href="javascript:;" title="男朋友"><i class="check"></i>男朋友</a></li><li><a href="javascript:;" title="女朋友"><i class="check"></i>女朋友</a></li><li><a href="javascript:;" title="老人"><i class="check"></i>老人</a></li><li><a href="javascript:;" title="小孩"><i class="check"></i>小孩</a></li><li><a href="javascript:;" title="领导"><i class="check"></i>领导</a></li></ul></div>
-			<div class="cb-gift-filter"><div class="title">啥时送：</div><ul class="cb-gift-filter-list clearfix"><li><a href="javascript:;" title="春节"><i class="check"></i>春节</a></li><li><a href="javascript:;" title="中秋"><i class="check"></i>中秋</a></li><li><a href="javascript:;" title="新年"><i class="check"></i>新年</a></li><li><a href="javascript:;" title="情人节"><i class="check"></i>情人节</a></li><li><a href="javascript:;" title="生日"><i class="check"></i>生日</a></li></ul></div>
+			<div class="cb-gift-filter">
+			  <div class="title">送给谁：</div>
+			    <ul class="cb-gift-filter-list clearfix">
+			      <li><a href="javascript:;" title="爸爸"><i class="check"></i>爸爸</a></li>
+			      <li><a href="javascript:;" title="妈妈"><i class="check"></i>妈妈</a></li>
+			      <li><a href="javascript:;" title="丈夫"><i class="check"></i>丈夫</a></li>
+			      <li><a href="javascript:;" title="妻子"><i class="check"></i>妻子</a></li>
+			      <li><a href="javascript:;" title="男朋友"><i class="check"></i>男朋友</a></li>
+			      <li><a href="javascript:;" title="女朋友"><i class="check"></i>女朋友</a></li>
+			      <li><a href="javascript:;" title="老人"><i class="check"></i>老人</a></li>
+			      <li><a href="javascript:;" title="小孩"><i class="check"></i>小孩</a></li>
+			      <li><a href="javascript:;" title="领导"><i class="check"></i>领导</a></li>
+			    </ul>
+			  </div>
+			<div class="cb-gift-filter"><div class="title">啥时送：</div>
+			  <ul class="cb-gift-filter-list clearfix">
+			    <li><a href="javascript:;" title="春节"><i class="check"></i>春节</a></li>
+			    <li><a href="javascript:;" title="中秋"><i class="check"></i>中秋</a></li>
+			    <li><a href="javascript:;" title="新年"><i class="check"></i>新年</a></li>
+			    <li><a href="javascript:;" title="情人节"><i class="check"></i>情人节</a></li>
+			    <li><a href="javascript:;" title="生日"><i class="check"></i>生日</a></li>
+			   </ul></div>
 			<div class="gift-btnbox"><a href="javascript:;" class="btn btn-primary btn-XL">搜索</a></div>
 		</div>
 	</div>
@@ -242,12 +262,21 @@
 		<div class="ml-wrap">
 			<div id="J_filter" class="filter">
 				<div class="f-line top">
-					<div class="f-sort"><a href="javascript:;" class="curr">综合排序<i></i></a><a href="javascript:;" class="">销量<i></i></a><a href="javascript:;" class="">价格<i></i></a><a href="javascript:;" class="" >评论数<i></i></a><a href="javascript:;" class="">新品<i></i></a></div>
+					<div class="f-sort"><a href="javascript:;" class="curr">综合排序<i></i></a><a href="javascript:;" class="">销量<i></i></a>
+					  <a href="javascript:;" class="">价格<i></i></a>
+					  <a href="javascript:;" class="" >评论数<i></i></a>
+					  <a href="javascript:;" class="">新品<i></i></a>
+					</div>
 					<div class="f-search">
 						<input type="text" value="在结果中搜索" class="input-txt">
-						<a data-type="all" data-field="exp_key" class="btn btn-default" data-url="search?keyword=%E7%91%9C%E4%BC%BD%E6%9C%8D&amp;enc=utf-8&amp;qrst=1&amp;rt=1&amp;stop=1&amp;vt=2&amp;exp_key=" href="javascript:;">确定</a>
+						<a data-type="all" data-field="exp_key" class="btn btn-default" 
+						  data-url="search?keyword=%E7%91%9C%E4%BC%BD%E6%9C%8D&amp;enc=utf-8&amp;qrst=1&amp;rt=1&amp;stop=1&amp;vt=2&amp;exp_key=" 
+						  href="javascript:;">确定</a>
 					</div>
-					<div id="J_topPage" class="f-pager"><span class="fp-text"><b>1</b><em>/</em><i>100</i></span><a class="fp-prev disabled" href="javascript:;">&lt;</a><a class="fp-next" onclick="SEARCH.page(3)" href="javascript:;" title="使用方向键右键也可翻到下一页哦！">&gt;</a></div>
+					<div id="J_topPage" class="f-pager"><span class="fp-text"><b>1</b><em>/</em><i>100</i></span>
+					  <a class="fp-prev disabled" href="javascript:;">&lt;</a>
+					  <a class="fp-next" onclick="SEARCH.page(3)" href="javascript:;" title="使用方向键右键也可翻到下一页哦！">&gt;</a>
+					</div>
 					<div class="f-result-sum">共<span id="J_resCount" class="num">5.6万</span>件商品</div>
 					<span class="clr"></span>
 				</div>
@@ -256,7 +285,100 @@
 						<div class="fs-cell delivery-location">配送至</div>
 						<div id="store-selector" class="">
 							<div class="text">北京朝阳区三环以内<b></b></div>
-							<div class="content"><div data-widget="tabs" class="m JD-stock"><div class="mt">    <ul class="tab">        <li data-index="0" data-widget="tab-item" class=""><a href="javascript:;" class="hover" title="北京"><em>北京</em><i></i></a></li>        <li data-index="1" data-widget="tab-item" style="" class=""><a href="javascript:;" class="" title="朝阳区"><em>朝阳区</em><i></i></a></li>        <li data-index="2" data-widget="tab-item" style="" class="curr"><a href="javascript:;" class="" title="三环以内"><em>三环以内</em><i></i></a></li>        <li data-index="3" data-widget="tab-item" style="display:none;"><a href="javascript:;" class=""><em>请选择</em><i></i></a></li>    </ul>    <div class="stock-line"></div></div><div class="mc" data-area="0" data-widget="tab-content" style="display: none;">    <ul class="area-list">       <li><a href="javascript:;" data-value="1">北京</a></li><li><a href="javascript:;" data-value="2">上海</a></li><li><a href="javascript:;" data-value="3">天津</a></li><li><a href="javascript:;" data-value="4">重庆</a></li><li><a href="javascript:;" data-value="5">河北</a></li><li><a href="javascript:;" data-value="6">山西</a></li><li><a href="javascript:;" data-value="7">河南</a></li><li><a href="javascript:;" data-value="8">辽宁</a></li><li><a href="javascript:;" data-value="9">吉林</a></li><li><a href="javascript:;" data-value="10">黑龙江</a></li><li><a href="javascript:;" data-value="11">内蒙古</a></li><li><a href="javascript:;" data-value="12">江苏</a></li><li><a href="javascript:;" data-value="13">山东</a></li><li><a href="javascript:;" data-value="14">安徽</a></li><li><a href="javascript:;" data-value="15">浙江</a></li><li><a href="javascript:;" data-value="16">福建</a></li><li><a href="javascript:;" data-value="17">湖北</a></li><li><a href="javascript:;" data-value="18">湖南</a></li><li><a href="javascript:;" data-value="19">广东</a></li><li><a href="javascript:;" data-value="20">广西</a></li><li><a href="javascript:;" data-value="21">江西</a></li><li><a href="javascript:;" data-value="22">四川</a></li><li><a href="javascript:;" data-value="23">海南</a></li><li><a href="javascript:;" data-value="24">贵州</a></li><li><a href="javascript:;" data-value="25">云南</a></li><li><a href="javascript:;" data-value="26">西藏</a></li><li><a href="javascript:;" data-value="27">陕西</a></li><li><a href="javascript:;" data-value="28">甘肃</a></li><li><a href="javascript:;" data-value="29">青海</a></li><li><a href="javascript:;" data-value="30">宁夏</a></li><li><a href="javascript:;" data-value="31">新疆</a></li><li><a href="javascript:;" data-value="32">台湾</a></li><li><a href="javascript:;" data-value="42">香港</a></li><li><a href="javascript:;" data-value="43">澳门</a></li><li><a href="javascript:;" data-value="84">钓鱼岛</a></li>    </ul></div><div class="mc" data-area="1" data-widget="tab-content" style="display: none;"><ul class="area-list"><li><a href="javascript:;" data-value="72">朝阳区</a></li><li><a href="javascript:;" data-value="2800">海淀区</a></li><li><a href="javascript:;" data-value="2801">西城区</a></li><li><a href="javascript:;" data-value="2802">东城区</a></li><li><a href="javascript:;" data-value="2803">崇文区</a></li><li><a href="javascript:;" data-value="2804">宣武区</a></li><li><a href="javascript:;" data-value="2805">丰台区</a></li><li><a href="javascript:;" data-value="2806">石景山区</a></li><li><a href="javascript:;" data-value="2807">门头沟</a></li><li><a href="javascript:;" data-value="2808">房山区</a></li><li><a href="javascript:;" data-value="2809">通州区</a></li><li><a href="javascript:;" data-value="2810">大兴区</a></li><li><a href="javascript:;" data-value="2812">顺义区</a></li><li><a href="javascript:;" data-value="2814">怀柔区</a></li><li><a href="javascript:;" data-value="2816">密云区</a></li><li><a href="javascript:;" data-value="2901">昌平区</a></li><li><a href="javascript:;" data-value="2953">平谷区</a></li><li><a href="javascript:;" data-value="3065">延庆县</a></li></ul></div><div class="mc" data-area="2" data-widget="tab-content"><ul class="area-list"><li><a href="javascript:;" data-value="2799">三环以内</a></li><li><a href="javascript:;" data-value="4137">管庄</a></li><li><a href="javascript:;" data-value="4139">北苑</a></li><li><a href="javascript:;" data-value="4211">定福庄</a></li><li class="long-area"><a href="javascript:;" data-value="2819">三环到四环之间</a></li><li class="long-area"><a href="javascript:;" data-value="2839">四环到五环之间</a></li><li class="long-area"><a href="javascript:;" data-value="2840">五环到六环之间</a></li></ul></div><div class="mc" data-area="3" data-widget="tab-content"></div></div><span class="clr"></span></div>
+							<div class="content">
+							  <div data-widget="tabs" class="m JD-stock">
+							  <div class="mt">
+							   <ul class="tab">
+							    <li data-index="0" data-widget="tab-item" class="">
+							      <a href="javascript:;" class="hover" title="北京"><em>北京</em><i></i></a>
+							    </li>        
+							    <li data-index="1" data-widget="tab-item" style="" class=""> 
+							      <a href="javascript:;" class="" title="朝阳区"><em>朝阳区</em><i></i></a>
+							    </li>        
+							    <li data-index="2" data-widget="tab-item" style="" class="curr">
+							      <a href="javascript:;" class="" title="三环以内"><em>三环以内</em><i></i></a>
+							    </li>        
+							    <li data-index="3" data-widget="tab-item" style="display:none;">
+							      <a href="javascript:;" class=""><em>请选择</em><i></i></a>
+							    </li>    
+							   </ul>    
+							   <div class="stock-line"></div>
+							  </div>
+							  <div class="mc" data-area="0" data-widget="tab-content" style="display: none;">    
+							  <ul class="area-list">       
+								  <li><a href="javascript:;" data-value="1">北京</a></li>
+								  <li><a href="javascript:;" data-value="2">上海</a></li>
+								  <li><a href="javascript:;" data-value="3">天津</a></li>
+								  <li><a href="javascript:;" data-value="4">重庆</a></li>
+								  <li><a href="javascript:;" data-value="5">河北</a></li>
+								  <li><a href="javascript:;" data-value="6">山西</a></li>
+								  <li><a href="javascript:;" data-value="7">河南</a></li>
+								  <li><a href="javascript:;" data-value="8">辽宁</a></li>
+								  <li><a href="javascript:;" data-value="9">吉林</a></li>
+								  <li><a href="javascript:;" data-value="10">黑龙江</a></li>
+								  <li><a href="javascript:;" data-value="11">内蒙古</a></li>
+								  <li><a href="javascript:;" data-value="12">江苏</a></li>
+								  <li><a href="javascript:;" data-value="13">山东</a></li>
+								  <li><a href="javascript:;" data-value="14">安徽</a></li>
+								  <li><a href="javascript:;" data-value="15">浙江</a></li>
+								  <li><a href="javascript:;" data-value="16">福建</a></li>
+								  <li><a href="javascript:;" data-value="17">湖北</a></li>
+								  <li><a href="javascript:;" data-value="18">湖南</a></li>
+								  <li><a href="javascript:;" data-value="19">广东</a></li>
+								  <li><a href="javascript:;" data-value="20">广西</a></li>
+								  <li><a href="javascript:;" data-value="21">江西</a></li>
+								  <li><a href="javascript:;" data-value="22">四川</a></li>
+								  <li><a href="javascript:;" data-value="23">海南</a></li>
+								  <li><a href="javascript:;" data-value="24">贵州</a></li>
+								  <li><a href="javascript:;" data-value="25">云南</a></li>
+								  <li><a href="javascript:;" data-value="26">西藏</a></li>
+								  <li><a href="javascript:;" data-value="27">陕西</a></li>
+								  <li><a href="javascript:;" data-value="28">甘肃</a></li>
+								  <li><a href="javascript:;" data-value="29">青海</a></li>
+								  <li><a href="javascript:;" data-value="30">宁夏</a></li>
+								  <li><a href="javascript:;" data-value="31">新疆</a></li>
+								  <li><a href="javascript:;" data-value="32">台湾</a></li>
+								  <li><a href="javascript:;" data-value="42">香港</a></li>
+								  <li><a href="javascript:;" data-value="43">澳门</a></li>
+								  <li><a href="javascript:;" data-value="84">钓鱼岛</a></li>    
+							  </ul>
+							  </div>
+							  <div class="mc" data-area="1" data-widget="tab-content" style="display: none;">
+							   <ul class="area-list">
+							    <li><a href="javascript:;" data-value="72">朝阳区</a></li>
+							    <li><a href="javascript:;" data-value="2800">海淀区</a></li>
+							    <li><a href="javascript:;" data-value="2801">西城区</a></li>
+							    <li><a href="javascript:;" data-value="2802">东城区</a></li>
+							    <li><a href="javascript:;" data-value="2803">崇文区</a></li>
+							    <li><a href="javascript:;" data-value="2804">宣武区</a></li>
+							    <li><a href="javascript:;" data-value="2805">丰台区</a></li>
+							    <li><a href="javascript:;" data-value="2806">石景山区</a></li>
+							    <li><a href="javascript:;" data-value="2807">门头沟</a></li>
+							    <li><a href="javascript:;" data-value="2808">房山区</a></li>
+							    <li><a href="javascript:;" data-value="2809">通州区</a></li>
+							    <li><a href="javascript:;" data-value="2810">大兴区</a></li>
+							    <li><a href="javascript:;" data-value="2812">顺义区</a></li>
+							    <li><a href="javascript:;" data-value="2814">怀柔区</a></li>
+							    <li><a href="javascript:;" data-value="2816">密云区</a></li>
+							    <li><a href="javascript:;" data-value="2901">昌平区</a></li>
+							    <li><a href="javascript:;" data-value="2953">平谷区</a></li>
+							    <li><a href="javascript:;" data-value="3065">延庆县</a></li>
+							   </ul>
+							  </div>
+							  <div class="mc" data-area="2" data-widget="tab-content">
+							   <ul class="area-list">
+							    <li><a href="javascript:;" data-value="2799">三环以内</a></li>
+							    <li><a href="javascript:;" data-value="4137">管庄</a></li>
+							    <li><a href="javascript:;" data-value="4139">北苑</a></li>
+							    <li><a href="javascript:;" data-value="4211">定福庄</a></li>
+							    <li class="long-area"><a href="javascript:;" data-value="2819">三环到四环之间</a></li>
+							    <li class="long-area"><a href="javascript:;" data-value="2839">四环到五环之间</a></li>
+							    <li class="long-area"><a href="javascript:;" data-value="2840">五环到六环之间</a></li>
+							   </ul></div><div class="mc" data-area="3" data-widget="tab-content">
+							  </div>
+							 </div>
+							 <span class="clr"></span>
+						</div>
 							<div class="close"></div>
 						</div>
 					</div>
@@ -285,7 +407,8 @@
 						<img width="220" height="220" class="err-product"  src="${product.urls[0]}">
 						<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 70px; top: 180px;">
 							<div class="gwd_float_curve_wrapper">
-							<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+							<span class="gwd_float_curve_trigger_icon" 
+							 style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 							<span class="gwd_float_curve_trigger_hint">上涨</span><div class="gwd_float_curve_overlay">
 							</div>
 							</div>
@@ -304,7 +427,8 @@
 					</div>
 				</div>
 				<div class="p-name p-name-type-2">
-					<a title="满129立减10,199减20优惠券,支持货到付款" href="javascript:;" onclick="window.open('http://localhost:8084/html/product/${product.id}.html')">
+					<a title="满129立减10,199减20优惠券,支持货到付款" href="javascript:;" 
+					  onclick="window.open('http://localhost:8084/html/product/${product.id}.html')">
 						<em>${product.name }</em>
 					</a>
 				</div>
@@ -314,7 +438,8 @@
 				<div class="p-operate">
 					<a class="p-o-btn contrast J_contrast" data-sku="1711416562" href="javascript:;" ><i></i>对比</a>
 					<a class="p-o-btn focus J_focus" data-sku="1711416562" href="javascript:;" ><i></i>关注</a>
-					<a class="p-o-btn addcart" data-stock-val="1" data-disable-notice="0" data-presale="0" href="javascript:;" data-parallel="0"><i></i>加入购物车</a>
+					<a class="p-o-btn addcart" data-stock-val="1" data-disable-notice="0" data-presale="0" href="javascript:;" data-parallel="0">
+					<i></i>加入购物车</a>
 				</div>
 			</div>
 		</li>
@@ -347,7 +472,8 @@
 						     		<img width="160" height="160" data-img="1" src="/images/ad3.jpg" class="err-product">      
 						     		<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 40px; top: 49px;">
 						     		<div class="gwd_float_curve_wrapper">
-						     		<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+						     		<span class="gwd_float_curve_trigger_icon" 
+						     		  style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 						     		<span class="gwd_float_curve_trigger_hint">上涨</span>
 						     		<div class="gwd_float_curve_overlay"></div>
 						     		</div>
@@ -370,7 +496,8 @@
 						     		<img width="160" height="160" data-img="1" src="/images/ad2.jpg" class="err-product">      
 						     		<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 40px; top: 49px;">
 						     		<div class="gwd_float_curve_wrapper">
-						     		<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+						     		<span class="gwd_float_curve_trigger_icon" 
+						     		  style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 						     		<span class="gwd_float_curve_trigger_hint">上涨</span>
 						     		<div class="gwd_float_curve_overlay"></div>
 						     		</div>
@@ -393,7 +520,8 @@
 						     		<img width="160" height="160" data-img="1" src="/images/55237eb5Ndf2c9fcf(1).jpg" class="err-product">      
 						     		<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 40px; top: 49px;">
 						     		<div class="gwd_float_curve_wrapper">
-						     		<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+						     		<span class="gwd_float_curve_trigger_icon" 
+						     		  style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 						     		<span class="gwd_float_curve_trigger_hint">上涨</span>
 						     		<div class="gwd_float_curve_overlay"></div>
 						     		</div>
@@ -416,7 +544,8 @@
 						     		<img width="160" height="160" data-img="1" src="/images/ad4.jpg" class="err-product">      
 						     		<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 40px; top: 49px;">
 						     		<div class="gwd_float_curve_wrapper">
-						     		<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+						     		<span class="gwd_float_curve_trigger_icon" 
+						     		  style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 						     		<span class="gwd_float_curve_trigger_hint">上涨</span>
 						     		<div class="gwd_float_curve_overlay"></div>
 						     		</div>
@@ -439,7 +568,8 @@
 						     		<img width="160" height="160" data-img="1" src="/images/ad2.jpg" class="err-product">      
 						     		<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 40px; top: 49px;">
 						     		<div class="gwd_float_curve_wrapper">
-						     		<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+						     		<span class="gwd_float_curve_trigger_icon" 
+						     		  style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 						     		<span class="gwd_float_curve_trigger_hint">上涨</span>
 						     		<div class="gwd_float_curve_overlay"></div>
 						     		</div>
@@ -462,7 +592,8 @@
 						     		<img width="160" height="160" data-img="1" src="/images/ad1.jpg" class="err-product">      
 						     		<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 40px; top: 49px;">
 						     		<div class="gwd_float_curve_wrapper">
-						     		<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
+						     		<span class="gwd_float_curve_trigger_icon" 
+						     		  style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>
 						     		<span class="gwd_float_curve_trigger_hint">上涨</span>
 						     		<div class="gwd_float_curve_overlay"></div>
 						     		</div>

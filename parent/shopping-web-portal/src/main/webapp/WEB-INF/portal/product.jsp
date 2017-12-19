@@ -41,6 +41,7 @@ window.pageConfig = {
 <script type="text/javascript">
 
 	var cid;
+	var skuId;
 
 	// 颜色选中
 	function colorToRed(target, colorId) {
@@ -68,6 +69,9 @@ window.pageConfig = {
 		<c:forEach items="${skus}" var="sku">
 		if ('${sku.colorId}' == cid && '${sku.size}' == size) {
 			$("#bbs-price").html("${sku.price}");
+			// 确定颜色与尺码后，可以确定sku的id
+			skuId = ${sku.id};
+			
 		}
 		</c:forEach>
 	}
@@ -77,7 +81,11 @@ window.pageConfig = {
 		$("#sizes div:first").trigger("click");
 	})
 	
-	
+	// 加入购物车方法
+	function addCart() {
+		var amount = $("#buy-num").val();
+		window.location.href = "/shopping/buyerCart?skuId=" + skuId + "&amount=" + amount;
+	}
 	
 
 </script>
@@ -117,7 +125,7 @@ window.pageConfig = {
 					<li id="summary-price">
 						<div class="dt">巴&nbsp;巴&nbsp;价：</div>
 						<div class="dd">
-							<strong class="p-price" id="bbs-price">￥888.00</strong> <a
+							<strong class="p-price" id="bbs-price"></strong> <a
 								id="notice-downp" href="javascript:;" target="_blank">(降价通知)</a>
 						</div>
 					</li>
